@@ -28,7 +28,7 @@ static void render_callback(Canvas* const canvas, void* ctx) {
 
     canvas_set_font(canvas, FontPrimary);
     canvas_draw_str_aligned(
-        canvas, plugin_state->x, plugin_state->y, AlignRight, AlignBottom, "Hello World");
+        canvas, plugin_state->x, plugin_state->y, AlignRight, AlignBottom, "Citruz");
 
     release_mutex((ValueMutex*)ctx, plugin_state);
 }
@@ -54,7 +54,7 @@ int32_t hello_world_app() {
 
     ValueMutex state_mutex;
     if(!init_mutex(&state_mutex, plugin_state, sizeof(PluginState))) {
-        FURI_LOG_E("Hello_world", "cannot create mutex\r\n");
+        FURI_LOG_E("Hello_World", "cannot create mutex\r\n");
         free(plugin_state);
         return 255;
     }
@@ -79,25 +79,25 @@ int32_t hello_world_app() {
             if(event.type == EventTypeKey) {
                 if(event.input.type == InputTypePress) {
                     switch(event.input.key) {
-                    /* case InputKeyUp:
-                        plugin_state->y--;
+                    case InputKeyUp:
+                        plugin_state->y-=10;
                         break;
                     case InputKeyDown:
-                        plugin_state->y++;
+                        plugin_state->y+=10;
                         break;
                     case InputKeyRight:
-                        plugin_state->x++;
+                        plugin_state->x+=10;
                         break;
                     case InputKeyLeft:
-                        plugin_state->x--;
-                        break;*/
+                        plugin_state->x-=10;
+                        break;
                     case InputKeyOk:
                     case InputKeyBack:
                         processing = false;
                         break;
                     }
                     // Nieuwe code, houd pijlen ingedrukt
-                    while(InputKeyUp) {
+                    /*while(InputKeyUp) {
                         plugin_state->y--;
                     }
                     while(InputKeyDown) {
@@ -108,7 +108,7 @@ int32_t hello_world_app() {
                     }
                     while(InputKeyLeft) {
                         plugin_state->x--;
-                    }
+                    }*/
                 }    
             }
         } else {
