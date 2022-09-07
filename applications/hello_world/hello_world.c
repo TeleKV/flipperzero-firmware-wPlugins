@@ -96,10 +96,7 @@ int32_t hello_world_app() {
                         processing = false;
                         break;
                     }
-                }
-
-                // Nieuwe code, houd pijlen ingedrukt
-                if(event.input.type == InputTypePress) {
+                    // Nieuwe code, houd pijlen ingedrukt
                     while(InputKeyUp) {
                         plugin_state->y--;
                     }
@@ -112,10 +109,10 @@ int32_t hello_world_app() {
                     while(InputKeyLeft) {
                         plugin_state->x--;
                     }
-                }
+                }    
             }
         } else {
-            FURI_LOG_D("Hello_world", "FuriMessageQueue: event timeout");
+            FURI_LOG_D("Citruz", "FuriMessageQueue: event timeout");
             // event timeout
         }
 
