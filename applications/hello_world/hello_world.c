@@ -24,7 +24,7 @@ static void render_callback(Canvas* const canvas, void* ctx) {
         return;
     }
     // border around the edge of the screen
-    canvas_draw_frame(canvas, 0, 0, 128, 64);
+    // canvas_draw_frame(canvas, 0, 0, 128, 64);
 
     canvas_set_font(canvas, FontPrimary);
     canvas_draw_str_aligned(
