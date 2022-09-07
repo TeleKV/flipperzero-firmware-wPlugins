@@ -113,6 +113,7 @@ App(
         "APPS_MouseJiggler",
         "APPS_MouseJacker",
         "APPS_NRFSniff",
+        "hello_world"
         "GAME_Snake",
         "GAME_2048",
         "GAME_Arkanoid",
