@@ -79,7 +79,7 @@ int32_t hello_world_app() {
             if(event.type == EventTypeKey) {
                 if(event.input.type == InputTypePress) {
                     switch(event.input.key) {
-                    case InputKeyUp:
+                    /* case InputKeyUp:
                         plugin_state->y--;
                         break;
                     case InputKeyDown:
@@ -90,11 +90,27 @@ int32_t hello_world_app() {
                         break;
                     case InputKeyLeft:
                         plugin_state->x--;
-                        break;
+                        break;*/
                     case InputKeyOk:
                     case InputKeyBack:
                         processing = false;
                         break;
+                    }
+                }
+
+                // Nieuwe code, houd pijlen ingedrukt
+                if(event.input.type == InputTypePress) {
+                    while(InputKeyUp) {
+                        plugin_state->y--;
+                    }
+                    while(InputKeyDown) {
+                        plugin_state->y++;
+                    }
+                    while(InputKeyRight) {
+                        plugin_state->x++;
+                    }
+                    while(InputKeyLeft) {
+                        plugin_state->x--;
                     }
                 }
             }
